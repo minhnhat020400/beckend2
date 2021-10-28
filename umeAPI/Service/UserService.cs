@@ -16,18 +16,17 @@ namespace umeAPI.Data
         {
             try
             {
-                if (IsExistPhoneNumner(phoneNumber))
+                if (IsExistEmail(phoneNumber))
                 {
                     SqlParameter phone = new SqlParameter("@phone", phoneNumber);
-                    string userPass = data.Database.SqlQuery<string>("select UserAccount.password from UserAccount where phoneNumber = @phone",
+                    string userPass = data.Database.SqlQuery<string>("select UserAccount.password from UserAccount where email = @phone",
                         phone).FirstOrDefault();
                     return userPass;
                 }
-                else return "số điện thoại chưa đă ký";
+                else return "Email chưa đăng ký";
             }
             catch (Exception)
             {
-
                 return "failt";
             }
             

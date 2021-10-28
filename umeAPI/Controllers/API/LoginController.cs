@@ -129,15 +129,20 @@ namespace umeAPI.Controllers.API
         //api quên mật khẩu
         [System.Web.Mvc.Route("api/Login/forgetpassword")]
         [System.Web.Mvc.HttpPost]
-        public string PostForgetPassword(string phoneNumber)
+        public async Task<string> PostForgetPassword(string email)
         {
-
-            if (checking.checkPhone(phoneNumber))
+            string pass = (string)Uservice.forgetPassword(email);
+            if (pass != null && pass != "failt")
             {
-                return (string)Uservice.forgetPassword(phoneNumber);
+                if (pass != "Email chưa đăng ký")
+                {
+                    await Authentication.sendPassByEmail(email, "App chat Ume Gửi Mật khâu ", " Bạn thật vô dụng! Có cái mật khẩu thôi cũng quên. làm tao phải viết hàm" +
+                  "lấy lại mk cho bạn: mk mới chủa bạn là:" + pass);
+                    return "success";
+                }
+                else return "Email chưa đăng ký";
             }
-            else
-                return "failt2";
+            else return pass;  
         }
 
 
