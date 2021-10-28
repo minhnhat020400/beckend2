@@ -131,7 +131,13 @@ namespace umeAPI.Controllers.API
         [System.Web.Mvc.HttpPost]
         public string PostForgetPassword(string phoneNumber)
         {
-            return (string)Uservice.forgetPassword(phoneNumber);
+
+            if (checking.checkPhone(phoneNumber))
+            {
+                return (string)Uservice.forgetPassword(phoneNumber);
+            }
+            else
+                return "failt2";
         }
 
 
