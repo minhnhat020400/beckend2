@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using umeAPI.Repo;
@@ -12,14 +13,14 @@ namespace umeAPI.Data
     {
         ChatUmeDTBEntities5 data = new ChatUmeDTBEntities5();
 
-        public object forgetPassword(string phoneNumber)
+        public async Task<string> forgetPassword(string phoneNumber)
         {
             try
             {
                 if (IsExistEmail(phoneNumber))
                 {
                     SqlParameter phone = new SqlParameter("@phone", phoneNumber);
-                    string userPass = data.Database.SqlQuery<string>("select UserAccount.password from UserAccount where email = @phone",
+                    string userPass =  data.Database.SqlQuery<string>("select UserAccount.password from UserAccount where email = @phone",
                         phone).FirstOrDefault();
                     return userPass;
                 }

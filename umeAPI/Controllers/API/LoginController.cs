@@ -131,7 +131,7 @@ namespace umeAPI.Controllers.API
         [System.Web.Mvc.HttpPost]
         public async Task<string> PostForgetPassword(string email)
         {
-            string pass = (string)Uservice.forgetPassword(email);
+            string pass = await Uservice.forgetPassword(email) as string;
             if (pass != null && pass != "failt")
             {
                 if (pass != "Email chưa đăng ký")
