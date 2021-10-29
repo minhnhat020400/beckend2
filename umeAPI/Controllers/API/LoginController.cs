@@ -146,22 +146,6 @@ namespace umeAPI.Controllers.API
         }
 
 
-        // api cập nhật hình ảnh
-        [System.Web.Mvc.Route("api/Login/updateAvertar")]
-        [System.Web.Mvc.HttpPut]
-        public object PutAvarta(int idUser, string urlAvarta)
-        {
-            try
-            {
-                return Json(new {
-                    message = Uservice.updateAvatar(idUser, urlAvarta)
-                });
-            }
-            catch (Exception)
-            {
-
-                return Json(new { message = "failt" });
-            }
-        }
+      
     }
 }

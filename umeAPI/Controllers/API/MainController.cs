@@ -24,11 +24,17 @@ namespace umeAPI.Controllers.API
             var add = fService.addnewFriend(idUser, idFriend);
             if (add != null)
             {
-                return Json(new { message = "success",
-                    data = add });
+                return Json(new
+                {
+                    message = "success",
+                    data = add
+                });
             }
-            else return Json(new { message = "failed",
-                data = add });
+            else return Json(new
+            {
+                message = "failed",
+                data = add
+            });
         }
 
 
@@ -50,7 +56,7 @@ namespace umeAPI.Controllers.API
 
                 return "failt to send email";
             }
-            return  code.ToString() ;
+            return code.ToString();
 
         }
 
@@ -84,7 +90,7 @@ namespace umeAPI.Controllers.API
             {
                 return Json(new { message = "failt" });
             }
-            
+
         }
 
 
@@ -139,5 +145,26 @@ namespace umeAPI.Controllers.API
                 return "failt";
             }
         }
+
+
+        // api cập nhật hình ảnh
+        // (api/Main )       
+        public object Put(int idUser, string urlAvarta)
+        {
+            try
+            {
+                return Json(new
+                {
+                    message = Uservice.updateAvatar(idUser, urlAvarta)
+                });
+            }
+            catch (Exception)
+            {
+
+                return Json(new { message = "failt" });
+            }
+        }
+        
+       
     }
 }

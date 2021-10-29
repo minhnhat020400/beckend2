@@ -4,11 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using umeAPI.Data;
 
 namespace umeAPI.Controllers
 {
     public class ValuesController : ApiController
     {
+        UserService Uservice = new UserService();
         // GET api/values
         [Route("nhat")]
         public IEnumerable<string> Get()
@@ -27,10 +29,7 @@ namespace umeAPI.Controllers
         {
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+        
 
         // DELETE api/values/5
         public void Delete(int id)
