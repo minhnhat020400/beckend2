@@ -259,49 +259,49 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\Comment.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Friend.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\GroupChat.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\groupChatMessage.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\InfoGroup.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Liked.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\Message.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Model22.Context.cs">
+    <Compile Include="Data\Model4.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model22.Context.tt</DependentUpon>
+      <DependentUpon>Model4.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Model22.cs">
+    <Compile Include="Data\Model4.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Model22.Designer.cs">
+    <Compile Include="Data\Model4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model22.edmx</DependentUpon>
+      <DependentUpon>Model4.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\Poster.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\UserAccount.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\UserNotification.cs">
-      <DependentUpon>Model22.tt</DependentUpon>
+      <DependentUpon>Model4.tt</DependentUpon>
     </Compile>
     <Compile Include="Repo\friendsRepo.cs" />
     <Compile Include="Service\Authentication.cs" />
@@ -331,15 +331,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Data\Model22.Context.tt">
+    <Content Include="Data\Model4.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model22.edmx</DependentUpon>
-      <LastGenOutput>Model22.Context.cs</LastGenOutput>
+      <DependentUpon>Model4.edmx</DependentUpon>
+      <LastGenOutput>Model4.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Data\Model22.tt">
+    <Content Include="Data\Model4.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model22.edmx</DependentUpon>
-      <LastGenOutput>Model22.cs</LastGenOutput>
+      <DependentUpon>Model4.edmx</DependentUpon>
+      <LastGenOutput>Model4.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -366,12 +366,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include=".editorconfig" />
-    <EntityDeploy Include="Data\Model22.edmx">
+    <EntityDeploy Include="Data\Model4.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model22.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model4.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Data\Model22.edmx.diagram">
-      <DependentUpon>Model22.edmx</DependentUpon>
+    <Content Include="Data\Model4.edmx.diagram">
+      <DependentUpon>Model4.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

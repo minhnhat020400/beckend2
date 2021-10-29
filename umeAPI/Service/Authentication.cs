@@ -45,6 +45,7 @@ namespace umeAPI.Service
             string password = "dgeltzrbzgdryvit";
             try
             {
+
                 using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
                 {
                     client.EnableSsl = true;
