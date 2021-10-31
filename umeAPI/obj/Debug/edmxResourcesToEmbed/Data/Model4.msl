@@ -73,6 +73,7 @@
     <EntitySetMapping Name="Messages">
       <EntityTypeMapping TypeName="ChatUmeDTBModel.Message">
         <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="content" ColumnName="content" />
           <ScalarProperty Name="idMessage" ColumnName="idMessage" />
           <ScalarProperty Name="idUser" ColumnName="idUser" />
           <ScalarProperty Name="toUserId" ColumnName="toUserId" />

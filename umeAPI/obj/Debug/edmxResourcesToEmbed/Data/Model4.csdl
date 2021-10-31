@@ -78,6 +78,7 @@
     <Property Name="createOn" Type="DateTime" Precision="3" />
     <Property Name="IisGim" Type="Boolean" />
     <Property Name="viewOn" Type="DateTime" Precision="3" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Poster">
     <Key>

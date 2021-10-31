@@ -22,5 +22,6 @@ namespace umeAPI.Data
         public Nullable<System.DateTime> createOn { get; set; }
         public Nullable<bool> IisGim { get; set; }
         public Nullable<System.DateTime> viewOn { get; set; }
+        public string content { get; set; }
     }
 }

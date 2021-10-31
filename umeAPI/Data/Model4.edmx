@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ChatUmeDTBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ChatUmeDTBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Comment">
           <Key>
             <PropertyRef Name="idComment" />
@@ -83,6 +83,7 @@
           <Property Name="createOn" Type="datetime" />
           <Property Name="IisGim" Type="bit" />
           <Property Name="viewOn" Type="datetime" />
+          <Property Name="content" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="Poster">
           <Key>
@@ -138,8 +139,7 @@
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserNotification" EntityType="Self.UserNotification" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ChatUmeDTBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -221,6 +221,7 @@
           <Property Name="createOn" Type="DateTime" Precision="3" />
           <Property Name="IisGim" Type="Boolean" />
           <Property Name="viewOn" Type="DateTime" Precision="3" />
+          <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Poster">
           <Key>
@@ -354,6 +355,7 @@
           <EntitySetMapping Name="Messages">
             <EntityTypeMapping TypeName="ChatUmeDTBModel.Message">
               <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="content" ColumnName="content" />
                 <ScalarProperty Name="idMessage" ColumnName="idMessage" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
                 <ScalarProperty Name="toUserId" ColumnName="toUserId" />
