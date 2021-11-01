@@ -42,7 +42,22 @@ namespace umeAPI.Service
 
         public object ShowListMess(int id, int idf)
         {
-            throw new NotImplementedException();
+            string parem = id.ToString() + idf.ToString();
+            SqlParameter code = new SqlParameter("@code", parem);
+
+            try
+            {
+                var resuit = data.Messages.SqlQuery("select * from Message where code=@code ", code);
+                    if (resuit != null)
+                {
+                    return resuit;
+                }
+                else return resuit;
+            }
+            catch {
+                return null;
+            }
+            
         }
 
         public object updeteStatus(int idMess)

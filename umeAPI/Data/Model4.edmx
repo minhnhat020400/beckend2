@@ -84,6 +84,7 @@
           <Property Name="IisGim" Type="bit" />
           <Property Name="viewOn" Type="datetime" />
           <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Poster">
           <Key>
@@ -222,6 +223,7 @@
           <Property Name="IisGim" Type="Boolean" />
           <Property Name="viewOn" Type="DateTime" Precision="3" />
           <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Poster">
           <Key>
@@ -355,6 +357,7 @@
           <EntitySetMapping Name="Messages">
             <EntityTypeMapping TypeName="ChatUmeDTBModel.Message">
               <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="code" ColumnName="code" />
                 <ScalarProperty Name="content" ColumnName="content" />
                 <ScalarProperty Name="idMessage" ColumnName="idMessage" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />

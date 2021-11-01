@@ -79,6 +79,7 @@
     <Property Name="IisGim" Type="bit" />
     <Property Name="viewOn" Type="datetime" />
     <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Poster">
     <Key>

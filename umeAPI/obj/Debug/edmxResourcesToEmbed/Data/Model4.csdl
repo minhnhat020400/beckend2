@@ -79,6 +79,7 @@
     <Property Name="IisGim" Type="Boolean" />
     <Property Name="viewOn" Type="DateTime" Precision="3" />
     <Property Name="content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Poster">
     <Key>
