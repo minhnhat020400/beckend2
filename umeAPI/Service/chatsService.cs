@@ -30,8 +30,11 @@ namespace umeAPI.Service
                 int result = data.Database.ExecuteSqlCommand("insert into Message " +
                     "(idUser,toUserId,createOn, content ) values (@idUser,@idf," +
                     "@sendon,@content)", parameters);
-                if(result==1)
+                if (result == 1) {
+                    updatef(mess.idUser, mess.toUserId);
                     return "thêm thành công";
+                }
+                    
                 else return "failt";
             }
             return "failt";
@@ -39,15 +42,24 @@ namespace umeAPI.Service
 
              
         }
+        void updatef(int id,int idf )
+        {
+            SqlParameter idU = new SqlParameter("@idU", id);
+            SqlParameter idF = new SqlParameter("@idF", idf);
+            SqlParameter[] parameters = new SqlParameter[] { idU, idF };
+            var resui =data.Database.ExecuteSqlCommand("update Friends set isActive=0 where (idUser=@idU and idFriend =@idF ) or (idUser=@idF and idFriend =@idU)", parameters);
+        }
 
         public object ShowListMess(int id, int idf)
         {
-            string parem = id.ToString() + idf.ToString();
-            SqlParameter code = new SqlParameter("@code", parem);
+
+            SqlParameter idU = new SqlParameter("@idU", id);
+            SqlParameter idF = new SqlParameter("@idF", idf);
+            SqlParameter[] parameters = new SqlParameter[] { idU, idF };
 
             try
             {
-                var resuit = data.Messages.SqlQuery("select * from Message where code=@code ", code);
+                var resuit = data.Messages.SqlQuery("select * from Message where (idUser=@idU and toUserId =@idF ) or (idUser=@idF and toUserId =@idU) ", parameters);
                     if (resuit != null)
                 {
                     return resuit;

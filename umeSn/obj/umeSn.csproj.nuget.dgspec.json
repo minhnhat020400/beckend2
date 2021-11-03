@@ -4,6 +4,16 @@
     "D:\\DoAn\\DoAnAndroid\\Ume\\backend2\\umeSn\\umeSn.csproj": {}
   },
   "projects": {
+    "D:\\DoAn\\DoAnAndroid\\Ume\\backend2\\umeAPI\\umeAPI.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\DoAn\\DoAnAndroid\\Ume\\backend2\\umeAPI\\umeAPI.csproj",
+        "projectName": "umeAPI",
+        "projectPath": "D:\\DoAn\\DoAnAndroid\\Ume\\backend2\\umeAPI\\umeAPI.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "D:\\DoAn\\DoAnAndroid\\Ume\\backend2\\umeSn\\umeSn.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -33,7 +43,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\DoAn\\DoAnAndroid\\Ume\\backend2\\umeAPI\\umeAPI.csproj": {
+                "projectPath": "D:\\DoAn\\DoAnAndroid\\Ume\\backend2\\umeAPI\\umeAPI.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -45,6 +59,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[6.0.0-rc.2.21480.5, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

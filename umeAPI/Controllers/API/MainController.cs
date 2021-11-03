@@ -17,11 +17,11 @@ namespace umeAPI.Controllers.API
         friendsService fService = new friendsService();
         // GET: Main
         //api thêm bạn bè
-        [System.Web.Mvc.Route("api/Main")]
+        [System.Web.Mvc.Route("api/Main/add")]
         [System.Web.Mvc.HttpPost]
-        public object PostAddFriends(int idUser, int idFriend)
+        public object PostAddFriends(int idU, int idF)
         {
-            var add = fService.addnewFriend(idUser, idFriend);
+            var add = fService.addnewFriend(idU, idF);
             if (add != null)
             {
                 return Json(new
@@ -93,6 +93,37 @@ namespace umeAPI.Controllers.API
 
         }
 
+        //api show list bạn bè
+        [System.Web.Mvc.Route("api/Main")]
+        [System.Web.Mvc.HttpGet]
+        public object GetListchatFriends(int idf)
+        {
+
+            try
+            {
+                var listfriends = fService.showlistchatfriends(idf);
+                if (listfriends != null)
+                {
+                    return Json(new
+                    {
+                        message = "success",
+                        data = listfriends
+                    });
+
+                }
+                else
+                    return Json(new
+                    {
+                        message = "failt",
+                        data = listfriends
+                    });
+            }
+            catch (Exception)
+            {
+                return Json(new { message = "failt" });
+            }
+
+        }
 
         //tìm bb qua tên số điện thoại
         [System.Web.Mvc.Route("api/Main/find")]

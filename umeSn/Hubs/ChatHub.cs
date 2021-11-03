@@ -3,16 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using umeAPI.Data;
+using umeAPI.Service;
 
 namespace umeSn.Hubs
 {
 
-        public class ChatHub : Hub
+    public class ChatHub : Hub
+    {
+       // chatsService chats = new chatsService();
+
+        public async Task SendMessage( string friends,string user, string message)
         {
-            public async Task SendMessage(string user, string message)
-            {
-                await Clients.All.SendAsync("ReceiveMessage", user, message);
-            }
+           // Message message1 = new Message { idUser = 0, toUserId =1, content = message };
+            await Clients.All.SendAsync("ReceiveMessage", friends, user, message);
+           // chats.SendMess(message1);
+
+            
         }
+    }
     
 }
